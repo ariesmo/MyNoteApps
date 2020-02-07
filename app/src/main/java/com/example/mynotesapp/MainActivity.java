@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements LoadNotesCallback
         protected ArrayList<Note> doInBackground(Void... voids) {
             Context context = weakContext.get();
 //            Cursor dataCursor = weakNoteHelper.get().queryAll();
-            Cursor dataCursor   = context.getContentResolver().query(DatabaseContract.NoteColumns.CONTENT_URI, null, null, null, null)
+            Cursor dataCursor   = context.getContentResolver().query(DatabaseContract.NoteColumns.CONTENT_URI, null, null, null, null);
             return MappingHelper.mapCursorToArrayList(dataCursor);
         }
 

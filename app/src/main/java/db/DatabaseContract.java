@@ -8,7 +8,7 @@ public final class DatabaseContract {
     public static final String AUTHORITY = "com.example.mynotesapp";
     private static final String SCHEME = "content";
 
-    private DatabaseContract;
+    private DatabaseContract(){};
 
     public static String TABLE_NAME = "notes";
 
