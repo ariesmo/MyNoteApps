@@ -12,7 +12,7 @@ import db.NoteHelper;
 
 import static db.DatabaseContract.AUTHORITY;
 import static db.DatabaseContract.NoteColumns.CONTENT_URI;
-import static db.DatabaseContract.TABLE_NAME;
+import static db.DatabaseContract.NoteColumns.TABLE_NAME;
 
 public class NoteProvider extends ContentProvider {
 
@@ -42,7 +42,7 @@ public class NoteProvider extends ContentProvider {
     }
 
     @Override
-    public Cursor query(Uri uri, String[] projection, String selection,
+    public Cursor query(@NonNull Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
         // TODO: Implement this to handle query requests from clients.
         Cursor cursor;
@@ -68,7 +68,7 @@ public class NoteProvider extends ContentProvider {
     }
 
     @Override
-    public Uri insert(Uri uri, ContentValues values) {
+    public Uri insert(@NonNull Uri uri, ContentValues values) {
         // TODO: Implement this to handle requests to insert a new row.
         long added;
         switch (sUriMatcher.match(uri)){
@@ -84,7 +84,7 @@ public class NoteProvider extends ContentProvider {
     }
 
     @Override
-    public int update(Uri uri, ContentValues values, String selection,
+    public int update(@NonNull Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
         // TODO: Implement this to handle requests to update one or more rows.
         int updated;
@@ -102,7 +102,7 @@ public class NoteProvider extends ContentProvider {
     }
 
     @Override
-    public int delete(Uri uri, String selection, String[] selectionArgs) {
+    public int delete(@NonNull Uri uri, String selection, String[] selectionArgs) {
         // Implement this to handle requests to delete one or more rows.
         int deleted;
         switch (sUriMatcher.match(uri)){

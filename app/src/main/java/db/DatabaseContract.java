@@ -10,14 +10,13 @@ public final class DatabaseContract {
 
     private DatabaseContract(){};
 
-    public static String TABLE_NAME = "notes";
-
     public static final class NoteColumns implements BaseColumns {
 
-        public static String _ID = "id";
-        public static String TITLE = "title";
-        public static String DESCRIPTION = "description";
-        public static String DATE = "date";
+        public static final String TABLE_NAME = "notes";
+        public static final String _ID = "id";
+        public static final String TITLE = "title";
+        public static final String DESCRIPTION = "description";
+        public static final String DATE = "date";
 
         //    untuk membuat URi content: com.example.mynotesapp/note
         public static final Uri CONTENT_URI = new Uri.Builder().scheme(SCHEME).authority(AUTHORITY).appendPath(TABLE_NAME).build();

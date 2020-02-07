@@ -6,10 +6,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import db.DatabaseContract.NoteColumns;
-
 import static db.DatabaseContract.NoteColumns.DATE;
 import static db.DatabaseContract.NoteColumns.DESCRIPTION;
+import static db.DatabaseContract.NoteColumns.TABLE_NAME;
 import static db.DatabaseContract.NoteColumns.TITLE;
 import static db.DatabaseContract.NoteColumns._ID;
 
@@ -23,7 +22,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     " %s TEXT NOT NULL," +
                     " %s TEXT NOT NULL," +
                     " %s TEXT NOT NULL)",
-            DatabaseContract.TABLE_NAME, _ID, TITLE, DESCRIPTION, DATE
+            TABLE_NAME, _ID, TITLE, DESCRIPTION, DATE
     );
 
     public DatabaseHelper(@Nullable Context context) {
@@ -37,7 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + DatabaseContract.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
 }

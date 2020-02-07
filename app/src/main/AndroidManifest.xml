@@ -15,7 +15,6 @@
         <provider
             android:name=".provider.NoteProvider"
             android:authorities="com.example.mynotesapp"
-            android:enabled="true"
             android:exported="true"
             android:readPermission="com.example.mynotesapp.READ_DATABASE"
             android:writePermission="com.example.mynotesapp.WRITE_DATABASE"/>

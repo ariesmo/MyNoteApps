@@ -2,7 +2,6 @@ package com.example.mynotesapp;
 
 import android.content.ContentValues;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -115,12 +114,12 @@ public class NoteAddUpdateActivity extends AppCompatActivity implements View.OnC
                 return;
             }
 
-            note.setTitle(title);
-            note.setDescription(description);
-
-            Intent intent = new Intent();
-            intent.putExtra(EXTRA_NOTE, note);
-            intent.putExtra(EXTRA_POSITION, position);
+//            note.setTitle(title);
+//            note.setDescription(description);
+//
+//            Intent intent = new Intent();
+//            intent.putExtra(EXTRA_NOTE, note);
+//            intent.putExtra(EXTRA_POSITION, position);
 
             ContentValues values = new ContentValues();
             values.put(DatabaseContract.NoteColumns.TITLE, title);

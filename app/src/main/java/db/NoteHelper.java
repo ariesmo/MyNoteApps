@@ -7,8 +7,8 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import static db.DatabaseContract.NoteColumns.TABLE_NAME;
 import static db.DatabaseContract.NoteColumns._ID;
-import static db.DatabaseContract.TABLE_NAME;
 
 public class NoteHelper {
     private static final String DATABASE_TABLE = TABLE_NAME;
