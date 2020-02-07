@@ -6,6 +6,8 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
 
+import androidx.annotation.NonNull;
+
 import db.NoteHelper;
 
 import static db.DatabaseContract.AUTHORITY;
@@ -25,7 +27,7 @@ public class NoteProvider extends ContentProvider {
         sUriMatcher.addURI(AUTHORITY, TABLE_NAME, NOTE);
 
 //        content : com.example.mynotesapp/note/id
-        sUriMatcher.addURI(AUTHORITY, TABLE_NAME + "#", NOTE_ID);
+        sUriMatcher.addURI(AUTHORITY, TABLE_NAME + "/#", NOTE_ID);
     }
 
     public NoteProvider() {
@@ -59,10 +61,10 @@ public class NoteProvider extends ContentProvider {
     }
 
     @Override
-    public String getType(Uri uri) {
+    public String getType(@NonNull Uri uri) {
         // TODO: Implement this to handle requests for the MIME type of the data
         // at the given URI.
-        throw new UnsupportedOperationException("Not yet implemented");
+        return null;
     }
 
     @Override
