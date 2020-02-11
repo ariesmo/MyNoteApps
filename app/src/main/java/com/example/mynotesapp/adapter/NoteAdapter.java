@@ -32,11 +32,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     }
 
     public void setListNote(ArrayList<Note> listNote) {
-        if (listNote.size() > 0){
-            this.listNote.clear();
-        }
+        this.listNote.clear();
         this.listNote.addAll(listNote);
-
         notifyDataSetChanged();
     }
 
